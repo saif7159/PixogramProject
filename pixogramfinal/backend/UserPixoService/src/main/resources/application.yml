@@ -7,11 +7,16 @@ spring:
       enabled: true
       settings:
         web-allow-others: true
-
+  application:
+    name: user-service
   jpa:
     hibernate:
       ddl-auto: update
     generate-ddl: true
     
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
 
    

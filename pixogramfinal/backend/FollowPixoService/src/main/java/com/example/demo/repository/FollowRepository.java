@@ -13,4 +13,6 @@ public interface FollowRepository extends CrudRepository<Follow, Integer> {
 	List<Follow> getByMyid(Integer myid);
 	
 	List<Follow> getByUserid(Integer userid);
+	
+	void removeByMyidAndUserid(Integer myid, Integer userid);
 }

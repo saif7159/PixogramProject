@@ -52,7 +52,10 @@ export class UserService {
   getFollower(userid: number): Observable<Object>{
     return this.http.get(`http://localhost:8023/follow/follower/`+`${userid}`)
   }
- 
+  
+  deleteFollowing(myid:number,userid:number):Observable<Object>{
+    return this.http.delete('http://localhost:8023/follow/delete/'+`${myid}`+"/"+`${userid}`)
+  }
   updateUser(user: UpdateModel,userid:number): Observable<Object> {
 
     return this.http.put(`${this.baseUrl}`+`/update/`+`${userid}`,user);

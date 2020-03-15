@@ -76,7 +76,11 @@ updateLikes(data)
   this.uploadService.updateLike(data,0).subscribe();
  } 
   
-  
+  unfollow()
+  {
+    console.log("click")
+    
+  }
 
 
 }

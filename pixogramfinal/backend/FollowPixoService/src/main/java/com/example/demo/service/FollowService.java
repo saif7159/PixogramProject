@@ -12,4 +12,6 @@ public interface FollowService {
 
 	List<Follow> getFollowingByUserid(int userid);
 
+	void deleteFollowingByMyidAndUserid(int myid, int userid);
+
 }

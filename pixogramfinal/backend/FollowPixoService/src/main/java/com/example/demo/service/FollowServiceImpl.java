@@ -28,4 +28,9 @@ public class FollowServiceImpl implements FollowService{
 	public List<Follow> getFollowingByUserid(int userid) {
 		return followRepository.getByUserid(userid);
 	}
+
+	@Override
+	public void deleteFollowingByMyidAndUserid(int myid, int userid) {
+		followRepository.removeByMyidAndUserid(myid, userid);		
+	}
 }
