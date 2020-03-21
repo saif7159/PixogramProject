@@ -13,7 +13,7 @@ export class FollowComponent implements OnInit {
   fllwmodel:FollowModel[];
   media: any = [];
   arrofmedia:any = [];
-
+  myid;
   constructor(private userService: UserService, private uploadService:UploadService,private router: Router) { }
 
   ngOnInit(): void {
@@ -24,9 +24,9 @@ export class FollowComponent implements OnInit {
     }
     
 
-  let myid = sessionStorage.getItem("userid"); 
-  console.log(myid) 
-  this.userService.getFollowing(Number(myid)).subscribe(following =>{
+  this.myid = sessionStorage.getItem("userid"); 
+  console.log(this.myid) 
+  this.userService.getFollowing(Number(this.myid)).subscribe(following =>{
     console.log(following)
     this.fllwmodel=JSON.parse(JSON.stringify(following))
 
@@ -76,10 +76,10 @@ updateLikes(data)
   this.uploadService.updateLike(data,0).subscribe();
  } 
   
-  unfollow()
+  unfollow(data)
   {
     console.log("click")
-    
+    this.userService.deleteFollowing(this.myid,Number(data)).subscribe();
   }
 
 

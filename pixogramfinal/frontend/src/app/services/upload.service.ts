@@ -8,12 +8,12 @@ import { Observable } from 'rxjs';
 })
 export class UploadService {
 
-  private baseUrl = 'http://localhost:8022/media';
+  private baseUrl = 'http://localhost:8762/media/media';
 
   constructor(private http: HttpClient) { }
 
    storeMedia(mediafile: uploadMediaModel, id: number, username: string): Observable<Object> {
-    return this.http.post('http://localhost:8022/media/create/' + id +'/' + username, mediafile);
+    return this.http.post(this.baseUrl + '/create/' + id +'/' + username, mediafile);
    }
   
    getUserMedia(id: number): Observable<any> {

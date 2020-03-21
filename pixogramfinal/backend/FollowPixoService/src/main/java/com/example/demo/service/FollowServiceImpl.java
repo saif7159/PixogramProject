@@ -31,6 +31,6 @@ public class FollowServiceImpl implements FollowService{
 
 	@Override
 	public void deleteFollowingByMyidAndUserid(int myid, int userid) {
-		followRepository.removeByMyidAndUserid(myid, userid);		
+		followRepository.deleteByMyidAndUserid(myid, userid);		
 	}
 }

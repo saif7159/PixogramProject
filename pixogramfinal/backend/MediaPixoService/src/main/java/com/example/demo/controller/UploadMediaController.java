@@ -20,7 +20,7 @@ import com.example.demo.model.UploadMedia;
 import com.example.demo.service.UploadMediaService;
 
 
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class UploadMediaController {
 

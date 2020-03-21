@@ -15,7 +15,7 @@ import com.example.demo.model.Login;
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class UserController {
 

@@ -9,9 +9,9 @@ import { UpdateModel } from '../models/update.model';
   providedIn: 'root'
 })
 export class UserService {
-  private baseUrl = 'http://localhost:8021/user';
+  private baseUrl = 'http://localhost:8762/user/user';
 
-  private followUrl='http://localhost:8023/follow'
+  private followUrl='http://localhost:8762/follow/follow'
 
   constructor(private http: HttpClient) { }
   
@@ -46,15 +46,15 @@ export class UserService {
   }
 
   getFollowing(userid: number): Observable<Object>{
-    return this.http.get(`http://localhost:8023/follow/following/`+`${userid}`)
+    return this.http.get(`${this.followUrl}`+`/following/`+`${userid}`)
   }
 
   getFollower(userid: number): Observable<Object>{
-    return this.http.get(`http://localhost:8023/follow/follower/`+`${userid}`)
+    return this.http.get(`${this.followUrl}`+`/follower/`+`${userid}`)
   }
   
   deleteFollowing(myid:number,userid:number):Observable<Object>{
-    return this.http.delete('http://localhost:8023/follow/delete/'+`${myid}`+"/"+`${userid}`)
+    return this.http.delete(`${this.followUrl}`+'/delete/'+`${myid}`+"/"+`${userid}`)
   }
   updateUser(user: UpdateModel,userid:number): Observable<Object> {
 

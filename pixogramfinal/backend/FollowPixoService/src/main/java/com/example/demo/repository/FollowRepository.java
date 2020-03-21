@@ -2,6 +2,8 @@ package com.example.demo.repository;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,5 +16,6 @@ public interface FollowRepository extends CrudRepository<Follow, Integer> {
 	
 	List<Follow> getByUserid(Integer userid);
 	
-	void removeByMyidAndUserid(Integer myid, Integer userid);
+	@Transactional
+	void deleteByMyidAndUserid(Integer myid, Integer userid);
 }

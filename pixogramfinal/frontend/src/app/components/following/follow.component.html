@@ -32,10 +32,10 @@
                 <img class="card-img-top" [routerLink]="['/mediadetails']"  (click) = "getId(p.id)" src="{{p.url}}" alt="Card image cap" width="50" height="250">
                 
             </div>
-            <div class="card-body">
+            <div class="card-body" style="text-align: center;">
                 <h5 style="text-align: center;" class="card-title">{{p.title}}</h5>
                 <h5 style="text-align: center;">By {{p.username}}</h5>
-                <button class="btn btnclr mx-auto" (click) = "unfollow()" style="text-align: center;">Unfollow</button>                         
+                <button class="btn btnclr mx-auto" (click) = "unfollow(p.uid)" >Unfollow</button>                         
 
             
             </div>
